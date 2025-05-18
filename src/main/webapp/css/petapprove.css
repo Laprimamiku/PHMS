@@ -1,0 +1,44 @@
+@charset "UTF-8";
+        /* 按钮样式 */
+        button {
+            padding: 5px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .approve-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .reject-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .adopt-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+        .approve-btn:hover, .reject-btn:hover, .adopt-btn:hover {
+            opacity: 0.8;
+        }
+        .disabled {
+            background-color: #ccc;
+            color: #fff;
+            cursor: not-allowed;
+        }
+        .message-box {
+            padding: 10px;
+            background-color: #f0f8ff;
+            border: 1px solid #add8e6;
+            margin: 10px 0;
+        }
+
+        /* 拒绝按钮和确认文本框 */
+        .reject-confirm-box {
+            display: none;
+            margin-top: 5px;
+        }
+        .reject-confirm-box input {
+            width: 200px;
+            padding: 5px;
+        }

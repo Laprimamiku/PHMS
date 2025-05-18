@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+/* 宠物信息部分 */
+.pet-info {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+}
+
+/* 宠物详情容器 */
+.pet-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* 宠物图片 */
+.pet-image {
+    flex: 1;
+    max-width: 350px;
+    margin-right: 20px;
+}
+
+.pet-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 宠物详情信息 */
+.pet-details-info {
+    flex: 2;
+    padding: 10px 20px;
+    color: #000; 
+}
+
+/* 宠物名称 */
+.pet-details-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000; 
+    margin-bottom: 15px;
+}
+
+/* 宠物信息 */
+.pet-details-info p {
+    font-size: 16px;
+    color: #000; 
+    margin: 10px 0;
+}
+
+.pet-details-info strong {
+    font-weight: bold;
+    color: #000; 
+}
+
+/* 信息部分的分隔线 */
+.pet-details-info p + p {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+/* 为空或无效时的提示信息 */
+.pet-details-info p {
+    font-size: 16px;
+    color: #000; 
+    font-style: italic;
+}
+
+/* 弹出消息（如：未找到宠物信息） */
+.error-message {
+    color: #e74c3c;  
+    text-align: center;
+    font-size: 18px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+}

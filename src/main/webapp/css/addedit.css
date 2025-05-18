@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/* 美化添加/编辑用户页面 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%; /* 确保宽度为100% */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* 包括 padding 和 border 在内的总宽度 */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* 隐藏错误和成功消息框，直到有提示信息 */
+.error-message,
+.success-message {
+    display: none; /* 默认不显示 */
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.error-message {
+    color: red;
+    border: 1px solid red;
+    background-color: #f8d7da;
+    border-radius: 4px;
+}
+
+.success-message {
+    color: green;
+    border: 1px solid green;
+    background-color: #d4edda;
+    border-radius: 4px;
+}
+
+/* 如果有提示信息，则显示消息框 */
+.c-message {
+    display: block;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+

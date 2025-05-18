@@ -1,0 +1,51 @@
+@charset "UTF-8";  /* 按钮的基础样式 */
+   /* 按钮的基础样式 */
+        .btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        /* 编辑按钮 */
+        .btn-secondary {
+            background-color: #4CAF50; /* 绿色 */
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #45a049; /* 悬停时深绿色 */
+            transform: scale(1.05);
+        }
+
+        /* 删除按钮 (红色底色) */
+        .btn-danger {
+            background-color: #f44336; /* 红色 */
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #d32f2f; /* 悬停时深红色 */
+            transform: scale(1.05);
+        }
+
+        /* 搜索框的样式 */
+        input[type="text"], button[type="submit"] {
+            padding: 8px 12px;
+            font-size: 14px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }

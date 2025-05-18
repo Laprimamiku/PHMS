@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* 通用样式 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+    width: 100%; /* 确保宽度为100% */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* 包括 padding 和 border 在内的总宽度 */
+}
+
+button.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.submit-button:hover {
+    background-color: #45a049;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.success-message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

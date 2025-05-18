@@ -1,0 +1,239 @@
+@charset "UTF-8";
+/* 重置样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 页面整体背景和字体 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 修改logo大小 */
+header #logo a img {
+    width: 120px;  /* 设置logo的宽度 */
+    height: auto;  /* 高度自动调整，保持图片比例 */
+}
+
+
+/* 导航栏 */
+header {
+    background-color: rgb(128, 64, 64);
+    padding: 10px 0;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header #logo a {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+header #nav {
+    list-style: none;
+    display: flex;
+}
+
+header #nav li {
+    margin: 0 15px;
+}
+
+header #nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+header #nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* 内容容器 */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* 主要内容部分 */
+.section {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.section strong {
+    font-weight: bold;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse; /* 合并表格单元格的边框 */
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+td {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+}
+
+/* 表格行的悬停效果 */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 删除和编辑链接 */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 搜索框和按钮样式 */
+form input[type="text"] {
+    padding: 8px;
+    width: 80%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* 页脚 */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+
+
+/* 分页样式 */
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 分页按钮 */
+.pagination a {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 悬停效果 */
+.pagination a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* 当前页样式：去除外边框 */
+.pagination span {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 16px;
+    color: #4CAF50;
+    background-color: #f4f4f4;
+    border: none;  /* 去除边框 */
+}
+
+/* 跳转框与按钮统一样式 */
+.pagination form {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.pagination input[type="number"] {
+    padding: 8px;
+    width: 50px;
+    border: 1px solid #ddd; /* 与分页按钮外边框一致 */
+    border-radius: 4px;
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+.pagination button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #ddd; /* 与分页按钮外边框一致 */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #45a049;
+}
