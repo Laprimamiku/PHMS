@@ -283,9 +283,16 @@ public class FavoriteServlet extends HttpServlet {
 */
     private void viewStats(HttpServletRequest req, HttpServletResponse resp, int userId)
             throws ServletException, IOException {
-        List<FavoriteItem> stats = itemService.getFavoriteStats(userId);
-        req.setAttribute("stats", stats);
-        req.getRequestDispatcher("favorite_stats.jsp").forward(req, resp);
+        try {
+            // 获取收藏统计信息
+            List<FavoriteItem> stats = itemService.getFavoriteStats(userId);
+            req.setAttribute("stats", stats);
+            req.getRequestDispatcher("favorite_visualization.jsp").forward(req, resp);
+        } catch (Exception e) {
+            e.printStackTrace();
+            req.setAttribute("errorMessage", "获取统计数据失败：" + e.getMessage());
+            resp.sendRedirect("FavoriteServlet?action=viewFolders");
+        }
     }
 
     private void removeFromFavorite(HttpServletRequest request, HttpServletResponse response)
