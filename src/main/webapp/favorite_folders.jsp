@@ -127,6 +127,25 @@
             background-color: #f44336;
             color: white;
         }
+        .search-container {
+    	margin: 20px 0;
+    	width: 100%;
+    	text-align: center;
+}
+
+#folderSearch {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Highlight for search results */
+.highlight {
+    background-color: #ffeb3b;
+    font-weight: bold;
+}
     </style>
 </head>
 <body>
@@ -164,6 +183,7 @@
     <main>
         <div class="favorite-header">
             <h1>我的收藏夹</h1>
+            <div class="search-container"><input type="text" id="folderSearch" placeholder="搜索收藏夹..." onkeyup="searchFolders()"></div>
             <button class="add-folder-btn" onclick="showAddFolderModal()">新建收藏夹</button>
             <a href="FavoriteServlet?action=viewStats" class="stats-link">收藏统计</a>
         </div>
