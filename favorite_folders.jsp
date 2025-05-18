@@ -47,15 +47,10 @@
     <main>
     	<div class="favorite-header">
     		<h1>我的收藏夹</h1>
-    			<div class="search-container">
-        		<div class="search-box">
-            		<input type="text" id="folderSearch" placeholder="输入收藏夹名称搜索...">
-            		<button class="search-btn" onclick="searchFolders()">搜索</button>
-        		</div>
-    		</div>
+    			
     		<div class="action-buttons">
         		<button class="add-folder-btn" onclick="showAddFolderModal()">新建收藏夹</button>
-        		<a href="FavoriteServlet?action=viewStats" class="stats-link">收藏统计</a>
+        		<a href="FavoriteServlet?action=viewStats" class="stats-link">可视化分析</a>
     		</div>
 		</div>
 
