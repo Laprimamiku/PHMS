@@ -1,0 +1,79 @@
+
+
+-- ----------------------------
+-- Table structure for tb_favorite_folder
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_favorite_folder`;
+CREATE TABLE `tb_favorite_folder`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_id` int NOT NULL COMMENT '创建收藏夹的用户ID',
+  `folder_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '收藏夹名称',
+  `description` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '收藏夹描述',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `user_id`(`user_id` ASC) USING BTREE,
+  CONSTRAINT `fk_folder_user` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 130 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Table structure for tb_favorite_item
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_favorite_item`;
+CREATE TABLE `tb_favorite_item`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `folder_id` int NOT NULL COMMENT '所属收藏夹ID',
+  `pet_id` int NOT NULL COMMENT '收藏的宠物ID',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '收藏时间',
+  `pet_type` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '宠物类型',
+  `count` int NOT NULL DEFAULT 1 COMMENT '收藏数量',
+  `last_updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后更新时间',
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `uk_folder_pet`(`folder_id` ASC, `pet_id` ASC) USING BTREE,
+  INDEX `folder_id`(`folder_id` ASC) USING BTREE,
+  INDEX `pet_id`(`pet_id` ASC) USING BTREE,
+  INDEX `pet_type`(`pet_type` ASC) USING BTREE,
+  CONSTRAINT `fk_item_folder` FOREIGN KEY (`folder_id`) REFERENCES `tb_favorite_folder` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `fk_item_pet` FOREIGN KEY (`pet_id`) REFERENCES `tb_pet` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+
+
+-- ----------------------------
+-- Table structure for tb_pet_similarity
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_pet_similarity`;
+CREATE TABLE `tb_pet_similarity`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `pet1_id` int NOT NULL COMMENT '宠物1ID',
+  `pet2_id` int NOT NULL COMMENT '宠物2ID',
+  `similarity` decimal(5, 4) NOT NULL COMMENT '相似度分数',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `uk_pet_pair`(`pet1_id` ASC, `pet2_id` ASC) USING BTREE,
+  INDEX `pet1_id`(`pet1_id` ASC) USING BTREE,
+  INDEX `pet2_id`(`pet2_id` ASC) USING BTREE,
+  CONSTRAINT `fk_sim_pet1` FOREIGN KEY (`pet1_id`) REFERENCES `tb_pet` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `fk_sim_pet2` FOREIGN KEY (`pet2_id`) REFERENCES `tb_pet` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 2541 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+
+
+-- ----------------------------
+-- Table structure for tb_user_similarity
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_user_similarity`;
+CREATE TABLE `tb_user_similarity`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user1_id` int NOT NULL COMMENT '用户1ID',
+  `user2_id` int NOT NULL COMMENT '用户2ID',
+  `similarity` decimal(5, 4) NOT NULL COMMENT '相似度分数',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `uk_user_pair`(`user1_id` ASC, `user2_id` ASC) USING BTREE,
+  INDEX `user1_id`(`user1_id` ASC) USING BTREE,
+  INDEX `user2_id`(`user2_id` ASC) USING BTREE,
+  CONSTRAINT `fk_sim_user1` FOREIGN KEY (`user1_id`) REFERENCES `tb_user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `fk_sim_user2` FOREIGN KEY (`user2_id`) REFERENCES `tb_user` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 199 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+SET FOREIGN_KEY_CHECKS = 1;
